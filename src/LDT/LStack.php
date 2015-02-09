@@ -144,8 +144,8 @@ class LStack extends LDT
      * @return int status code of the operation
      */
     public function filter($module, $function, array $args, array &$elements) {
-        $this->error = "Method not implemented";
-        $this->errorno = self::ERR_LDT;
+        $status = $this->db->apply($this->key, 'lstack', 'filter', array($this->bin, 0, $module, $function, $args), $elements);
+        $this->processStatusCode($status);
         return $this->errorno;
     }
 
