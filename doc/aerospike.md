@@ -179,13 +179,14 @@ class Aerospike
 
     // key-value methods
     public array initKey ( string $ns, string $set, int|string $pk [, boolean $is_digest = false ] )
+    public string getKeyDigest ( string $ns, string $set, int|string $pk )
     public int put ( array $key, array $bins [, int $ttl = 0 [, array $options ]] )
     public int get ( array $key, array &$record [, array $filter [, array $options ]] )
     public int exists ( array $key, array &$metadata [, array $options ] )
     public int touch ( array $key, int $ttl = 0 [, array $options ] )
     public int remove ( array $key [, array $options ] )
     public int removeBin ( array $key, array $bins [, array $options ] )
-    public int increment ( array $key, string $bin, int $offset [, int $initial_value = 0 [, array $options ]] )
+    public int increment ( array $key, string $bin, int $offset [, array $options ] )
     public int append ( array $key, string $bin, string $value [, array $options ] )
     public int prepend ( array $key, string $bin, string $value [, array $options ] )
     public int operate ( array $key, array $operations [, array &$returned ] )
